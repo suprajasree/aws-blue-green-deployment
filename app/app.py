@@ -176,7 +176,7 @@ Production-style Zero-Downtime Deployment Project
 def health():
     return {
         "status": "failed",
-        "version": BROKEN,
+        "version": "2.0",
         "environment": GREEN,
         "hostname": HOSTNAME
     }, 500
