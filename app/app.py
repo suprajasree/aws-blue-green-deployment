@@ -103,7 +103,7 @@ Blue-Green Deployment Demo using AWS • Docker • Nginx • GitHub Actions
 
 <tr>
 <td>Application</td>
-<td>Blue-Green Deployment</td>
+<td>Blue-Green Deployment v2</td>
 </tr>
 
 <tr>
