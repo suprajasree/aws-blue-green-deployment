@@ -25,6 +25,7 @@ jobs:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
+        debug: true
 
         script: |
           cd /home/ubuntu/aws-blue-green-deployment
