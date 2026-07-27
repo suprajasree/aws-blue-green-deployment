@@ -175,11 +175,11 @@ Production-style Zero-Downtime Deployment Project
 @app.route("/health")
 def health():
     return {
-        "status": "healthy",
-        "version": VERSION,
-        "environment": ENVIRONMENT,
+        "status": "failed",
+        "version": BROKEN,
+        "environment": GREEN,
         "hostname": HOSTNAME
-    }, 200
+    }, 500
 
 
 @app.route("/version")

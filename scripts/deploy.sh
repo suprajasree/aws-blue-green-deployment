@@ -37,7 +37,9 @@ echo "Running health check..."
 if [ $? -ne 0 ]; then
 
     echo "Health check failed."
-    echo "Deployment stopped."
+    echo "Rolling back Deployment ..."
+    ./scripts/rollback.sh
+
 
     exit 1
 
