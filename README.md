@@ -147,43 +147,43 @@ aws-blue-green-deployment
 
 ## GitHub Actions CI/CD Pipeline
 
-![GitHub Actions Pipeline](screenshots/05-github-actions-pipeline.png)
+![GitHub Actions Pipeline](screenshots/GitHub Actions CICD Pipeline - Successful Deployment.png)
 
 ---
 
 ## Workflow Execution History
 
-![Workflow History](screenshots/06-workflow-history.png)
+![Workflow History](screenshots/GitHub Actions Workflow Execution History.png)
 
 ---
 
 ## Blue & Green Docker Containers
 
-![Docker Containers](screenshots/02-blue-green-containers.png)
+![Docker Containers](screenshots/Blue and Green Docker Containers Running Simultaneously.png)
 
 ---
 
 ## Nginx Traffic Switch
 
-![Nginx Traffic Switch](screenshots/03-nginx-traffic-switch.png)
+![Nginx Traffic Switch](screenshots/Blue-Green Traffic Switch Using Nginx.png)
 
 ---
 
 ## Application Health Check
 
-![Health Check](screenshots/01-health-check.png)
+![Health Check](screenshots/Application Health Check Verification.png)
 
 ---
 
 ## Successful Deployment
 
-![Green Environment](screenshots/07-green-environment.png)
+![Green Environment](screenshots/Traffic Switched to Green Environment.png)
 
 ---
 
 ## End-to-End Deployment
 
-![End to End Deployment](screenshots/04-end-to-end-deployment.png)
+![End to End Deployment](screenshots/End-to-End Automated Blue-Green Deployment.png)
 
 ---
 
