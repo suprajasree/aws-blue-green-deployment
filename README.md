@@ -152,37 +152,7 @@ Example Response
 
 ---
 
-# 📷 Project Screenshots
 
-Add your screenshots inside the `screenshots` folder and reference them here.
-
-Example:
-
-## AWS EC2 Instance
-
-```
-![EC2](screenshots/01-aws-ec2-instance-running.png)
-```
-
-## GitHub Actions Pipeline
-
-```
-![Pipeline](screenshots/02-github-actions-success.png)
-```
-
-## Docker Containers
-
-```
-![Docker](screenshots/03-running-containers.png)
-```
-
-## Application
-
-```
-![Application](screenshots/04-application-homepage.png)
-```
-
----
 
 # 🚀 Future Improvements
 
