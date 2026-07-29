@@ -15,63 +15,38 @@
 
 # 📌 Project Overview
 
-This project demonstrates a **production-style Blue-Green Deployment** strategy using **AWS EC2**, **Docker**, **Nginx**, and **GitHub Actions**.
+This project demonstrates a **production-ready Blue-Green Deployment** strategy using **AWS EC2**, **Docker**, **Nginx**, and **GitHub Actions**.
 
-The CI/CD pipeline automatically deploys every new GitHub commit to the inactive environment, performs a health check, and switches production traffic using Nginx. This deployment approach minimizes downtime and reduces deployment risk.
+The CI/CD pipeline automatically deploys application updates to the inactive environment, performs health checks, and switches production traffic through Nginx with minimal downtime.
 
 ---
 
 # 🏗️ Architecture
 
-```text
-                    👨‍💻 Developer
-                          │
-                   git push origin main
-                          │
-                          ▼
-                  GitHub Repository
-                          │
-                          ▼
-                 GitHub Actions CI/CD
-                          │
-                     SSH Deployment
-                          │
-                          ▼
-                   AWS EC2 (Ubuntu)
-                          │
-             ┌────────────┴────────────┐
-             │                         │
-             ▼                         ▼
-      🔵 Blue Docker App        🟢 Green Docker App
-             │                         │
-             └────────────┬────────────┘
-                          ▼
-                 Nginx Reverse Proxy
-                          │
-                          ▼
-                      🌍 End Users
-```
+<p align="center">
+  <img src="architecture/aws-blue-green-architecture.png" alt="AWS Blue-Green Deployment Architecture" width="100%">
+</p>
 
 ---
 
-# ✨ Features
+# ✨ Key Features
 
-- ✅ Blue-Green Deployment Strategy
-- ✅ Automated CI/CD Pipeline
-- ✅ Dockerized Flask Application
-- ✅ AWS EC2 Deployment
-- ✅ Nginx Reverse Proxy
-- ✅ Health Check Validation
-- ✅ Automated Traffic Switching
-- ✅ Minimal Downtime Deployment
-- ✅ Linux Server Administration
+- 🚀 Blue-Green Deployment Strategy
+- ⚙️ Automated CI/CD with GitHub Actions
+- 🐳 Dockerized Flask Application
+- ☁️ AWS EC2 Deployment
+- 🌐 Nginx Reverse Proxy
+- ❤️ Health Check Validation
+- 🔄 Automated Traffic Switching
+- ⏱️ Minimal Downtime Deployment
+- 🐧 Linux Server Administration
 
 ---
 
 # 🛠️ Technology Stack
 
 | Category | Technologies |
-|-----------|--------------|
+|----------|--------------|
 | Cloud | AWS EC2 |
 | CI/CD | GitHub Actions |
 | Containerization | Docker |
@@ -97,7 +72,17 @@ aws-blue-green-deployment/
 │   ├── blue.conf
 │   └── green.conf
 │
+├── architecture/
+│   └── aws-blue-green-architecture.png
+│
 ├── screenshots/
+│   ├── 01-health-check.png
+│   ├── 02-blue-green-containers.png
+│   ├── 03-nginx-traffic-switch.png
+│   ├── 04-end-to-end-deployment.png
+│   ├── 05-github-actions-pipeline.png
+│   ├── 06-workflow-history.png
+│   └── 07-green-environment.png
 │
 ├── .github/
 │   └── workflows/
@@ -111,15 +96,15 @@ aws-blue-green-deployment/
 
 ---
 
-# ⚙️ CI/CD Workflow
+# 🔄 CI/CD Workflow
 
 1. Developer pushes code to GitHub.
 2. GitHub Actions workflow starts automatically.
-3. The workflow securely connects to the AWS EC2 instance via SSH.
-4. Docker builds and deploys the latest application version.
-5. The application health is verified.
+3. Workflow connects securely to the AWS EC2 instance.
+4. Docker builds and deploys the application.
+5. Health checks validate the deployment.
 6. Nginx switches production traffic to the healthy environment.
-7. Users access the updated application with minimal downtime.
+7. End users access the updated application with minimal downtime.
 
 ---
 
@@ -159,13 +144,13 @@ aws-blue-green-deployment/
 
 ## Blue & Green Docker Containers
 
-![Docker Containers](screenshots/02-blue-green-containers.png)
+![Blue Green Containers](screenshots/02-blue-green-containers.png)
 
 ---
 
 ## Nginx Traffic Switching
 
-![Nginx Traffic Switch](screenshots/03-nginx-traffic-switch.png)
+![Traffic Switch](screenshots/03-nginx-traffic-switch.png)
 
 ---
 
@@ -192,25 +177,24 @@ aws-blue-green-deployment/
 - AWS EC2
 - Docker
 - GitHub Actions
-- CI/CD Automation
+- CI/CD Pipeline Automation
 - Nginx Reverse Proxy
 - Linux Administration
 - SSH Deployment
 - Blue-Green Deployment
-- Flask
-- Python
-- Git
+- Python Flask
+- Git & GitHub
 
 ---
 
 # 📚 Key Learning Outcomes
 
-- Implemented a Blue-Green deployment strategy.
-- Built an automated CI/CD pipeline with GitHub Actions.
-- Deployed Docker containers on AWS EC2.
+- Implemented Blue-Green deployment on AWS EC2.
+- Automated deployments using GitHub Actions.
+- Built and managed Docker containers.
 - Configured Nginx as a reverse proxy.
-- Performed health checks before production traffic switching.
-- Reduced deployment downtime using automated traffic routing.
+- Implemented health checks before production traffic switching.
+- Reduced deployment downtime using automated routing.
 
 ---
 
@@ -238,4 +222,4 @@ aws-blue-green-deployment/
 
 ## ⭐ Support
 
-If you found this project useful, please consider giving it a ⭐ on GitHub.
+If you found this project helpful, please consider giving it a ⭐ on GitHub.
