@@ -1,140 +1,109 @@
-# 🚀 AWS Blue-Green Deployment with GitHub Actions CI/CD
+# 🚀 AWS Blue-Green Deployment using Docker, Nginx & GitHub Actions
 
-![AWS](https://img.shields.io/badge/AWS-EC2-orange)
-![Docker](https://img.shields.io/badge/Docker-Container-blue)
-![GitHub Actions](https://img.shields.io/badge/GitHub-Actions-black)
-![Nginx](https://img.shields.io/badge/Nginx-Reverse%20Proxy-green)
-![Linux](https://img.shields.io/badge/Linux-Ubuntu-yellow)
-![Python](https://img.shields.io/badge/Python-Flask-blue)
-
-## 📌 Project Overview
-
-This project demonstrates a production-style **Blue-Green Deployment** strategy on **AWS EC2** using **Docker**, **Nginx**, and **GitHub Actions** for automated CI/CD.
-
-The application is containerized using Docker and deployed to an Ubuntu EC2 instance. GitHub Actions automatically builds and deploys the latest version whenever changes are pushed to the repository, enabling near zero-downtime deployments through Blue-Green deployment.
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-EC2-orange?logo=amazonaws">
+  <img src="https://img.shields.io/badge/Docker-Container-blue?logo=docker">
+  <img src="https://img.shields.io/badge/GitHub-Actions-black?logo=githubactions">
+  <img src="https://img.shields.io/badge/Nginx-Reverse%20Proxy-green?logo=nginx">
+  <img src="https://img.shields.io/badge/Python-Flask-blue?logo=python">
+  <img src="https://img.shields.io/badge/Linux-Ubuntu-E95420?logo=ubuntu">
+</p>
 
 ---
 
-# 🏗️ Architecture
+## 📌 Overview
 
-```
-                 Developer
-                     │
-                     ▼
-            GitHub Repository
-                     │
-          Push to main branch
-                     │
-                     ▼
-            GitHub Actions CI/CD
-                     │
-             SSH Deployment
-                     │
-                     ▼
-              AWS EC2 (Ubuntu)
-                     │
-      ┌──────────────┴──────────────┐
-      │                             │
-      ▼                             ▼
- Blue Docker Container       Green Docker Container
-      │                             │
-      └──────────────┬──────────────┘
-                     ▼
-              Nginx Reverse Proxy
-                     │
-                     ▼
-                  End Users
-```
+This project demonstrates a **production-style Blue-Green Deployment** on **AWS EC2** using **Docker**, **Nginx**, and **GitHub Actions**.
+
+Whenever new code is pushed to GitHub, the CI/CD pipeline automatically deploys the application to the inactive environment, verifies its health, and switches live traffic using Nginx. This approach minimizes downtime and provides a safer deployment process.
 
 ---
 
-# ✨ Features
+# 🏗 Architecture
 
-* Blue-Green Deployment Strategy
-* Dockerized Flask Application
-* GitHub Actions CI/CD Pipeline
-* AWS EC2 Deployment
-* Nginx Reverse Proxy
-* Zero/Minimal Downtime Deployment
-* Automated Container Deployment
-* Health Check Endpoint
-* Linux Server Management
-* Secure SSH-based Deployment
+> *(We'll replace this section with a professional architecture diagram in the next step.)*
 
 ---
 
-# 🛠️ Tech Stack
+## ✨ Features
 
-### Cloud
-
-* AWS EC2
-
-### DevOps
-
-* Docker
-* GitHub Actions
-* CI/CD
-* Nginx
-
-### Backend
-
-* Python
-* Flask
-
-### Operating System
-
-* Ubuntu Linux
-
-### Version Control
-
-* Git
-* GitHub
+- Blue-Green Deployment
+- Dockerized Flask Application
+- GitHub Actions CI/CD Pipeline
+- AWS EC2 Deployment
+- Nginx Reverse Proxy
+- Automated Deployment
+- Health Check Endpoint
+- Zero / Minimal Downtime
+- Linux Server Administration
 
 ---
 
-# 📁 Project Structure
+## 🛠 Technology Stack
 
-```
-aws-blue-green-deployment
+| Category | Technologies |
+|----------|--------------|
+| Cloud | AWS EC2 |
+| CI/CD | GitHub Actions |
+| Containers | Docker |
+| Reverse Proxy | Nginx |
+| Backend | Flask (Python) |
+| OS | Ubuntu Linux |
+| Version Control | Git & GitHub |
+
+---
+
+## 📂 Project Structure
+
+```text
+aws-blue-green-deployment/
 │
 ├── app/
-│   ├── app.py
-│   ├── requirements.txt
-│   └── Dockerfile
-│
 ├── nginx/
-│   ├── nginx.conf
-│   ├── blue.conf
-│   └── green.conf
-│
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml
-│
-├── screenshots/
-│
 ├── docker-compose.yml
-│
-└── README.md
+├── README.md
+├── LICENSE
+└── screenshots/
 ```
 
 ---
 
-# ⚙️ Deployment Workflow
+## ⚙ Deployment Workflow
 
-1. Developer pushes code to GitHub.
-2. GitHub Actions workflow starts automatically.
-3. Workflow connects securely to the AWS EC2 instance using SSH.
-4. Docker image is built and deployed.
-5. Blue or Green container is updated.
-6. Nginx switches traffic to the healthy environment.
-7. Users access the latest version with minimal downtime.
+```text
+Developer
+     │
+git push
+     │
+     ▼
+GitHub Repository
+     │
+     ▼
+GitHub Actions
+     │
+SSH
+     ▼
+AWS EC2
+     │
+Docker Deploy
+     ▼
+Blue / Green Containers
+     │
+Health Check
+     ▼
+Nginx Traffic Switch
+     │
+     ▼
+Users
+```
 
 ---
 
-# ❤️ Health Check
+## ❤️ Health Check
 
-Health Endpoint
+Endpoint
 
 ```
 /health
@@ -144,49 +113,85 @@ Example Response
 
 ```json
 {
-  "status": "healthy",
-  "version": "1.0",
-  "environment": "BLUE"
+  "status":"healthy",
+  "version":"1.0",
+  "environment":"GREEN"
 }
 ```
 
 ---
 
+## 📸 Project Screenshots
 
+### GitHub Actions CI/CD Pipeline
 
-# 🚀 Future Improvements
-
-* Kubernetes Deployment (Amazon EKS)
-* Terraform Infrastructure as Code
-* Prometheus Monitoring
-* Grafana Dashboards
-* AWS Application Load Balancer
-* SSL using Let's Encrypt
-* Auto Scaling
-* Amazon CloudWatch Integration
+![Pipeline](SCREENSHOT/GitHub%20Actions%20CICD%20Pipeline%20-%20Successful%20Deployment.png)
 
 ---
 
-# 👩‍💻 Author
+### Workflow Execution History
+
+![Workflow](SCREENSHOT/GitHub%20Actions%20Workflow%20Execution%20History.png)
+
+---
+
+### Blue & Green Containers
+
+![Containers](SCREENSHOT/Blue%20and%20Green%20Docker%20Containers%20Running%20Simultaneously.png)
+
+---
+
+### Nginx Traffic Switch
+
+![Nginx](SCREENSHOT/Blue-Green%20Traffic%20Switch%20Using%20Nginx.png)
+
+---
+
+### Health Check
+
+![Health](SCREENSHOT/Application%20Health%20Check%20Verification.png)
+
+---
+
+### Final Deployment
+
+![Deployment](SCREENSHOT/Traffic%20Switched%20to%20Green%20Environment.png)
+
+---
+
+## 💼 Skills Demonstrated
+
+- AWS EC2
+- Docker
+- GitHub Actions
+- CI/CD Automation
+- Nginx
+- Linux Administration
+- SSH
+- Blue-Green Deployment
+- Flask
+- Git
+
+---
+
+## 🚀 Future Enhancements
+
+- Kubernetes (Amazon EKS)
+- Terraform Infrastructure as Code
+- Prometheus Monitoring
+- Grafana Dashboards
+- SSL using Let's Encrypt
+- AWS Load Balancer
+- Amazon CloudWatch
+
+---
+
+## 👩‍💻 Author
 
 **Supraja**
 
-DevOps Engineer
-
-Skills:
-
-* AWS
-* Docker
-* GitHub Actions
-* Linux
-* CI/CD
-* Nginx
-* Python
-* Flask
+DevOps | AWS | Docker | GitHub Actions | Linux | Python
 
 ---
 
-# ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
-
+⭐ If you found this project useful, consider giving it a star.
